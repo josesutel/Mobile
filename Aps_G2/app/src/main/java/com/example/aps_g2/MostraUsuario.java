@@ -20,12 +20,12 @@ public class MostraUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostra_usuario);
+
         ListView listaUsusario =(ListView)findViewById(R.id.listar);
         lista = bd.listaUsuario();
 
 
-        ArrayAdapter<Usuario> listaAdapter =
-                new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1,lista);
+        ArrayAdapter<Usuario> listaAdapter = new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1,lista);
 
         listaUsusario.setAdapter(listaAdapter);
 
@@ -37,7 +37,7 @@ public class MostraUsuario extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int indice, long l) {
 
-            Usuario usuarioSelecionado = lista.get(indice);
+             Usuario usuarioSelecionado = lista.get(indice);
             Bundle sacola = new Bundle();
             sacola.putSerializable("usuario_Selecionado", usuarioSelecionado);
 
@@ -46,10 +46,9 @@ public class MostraUsuario extends AppCompatActivity {
             startActivity(intent);
 
 
-            Log.i("exercicio", usuarioSelecionado.getNome());
+            Log.i("exercicio",usuarioSelecionado.getNome ());
             Log.i("exercicio",usuarioSelecionado.getPlaca());
         }
     }
     }
-    }
-}
+
